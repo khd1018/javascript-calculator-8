@@ -5,7 +5,7 @@ describe("DelimiterFinder test", () => {
     ["//;\n", ";"],
     ["//-\n", "-"],
     ["// \n", " "],
-  ])("숫자들의 합을 구할 수 있다.", (numbers, delimeter) => {
+  ])("커스텀 구분자를 구할 수 있다.", (numbers, delimeter) => {
     expect(delimiterFinder.getDelimiter(numbers)).toStrictEqual(delimeter);
   });
 });

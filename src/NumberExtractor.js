@@ -11,7 +11,11 @@ class NumberExtractor {
     return customDelimiter ? true : false;
   }
 
-  extract(userInputString) {}
+  extract(userInputString) {
+    const numberExtractionRegex = new RegExp(`[${this.#delimiters.join("")}]`);
+
+    return userInputString.split(numberExtractionRegex).map((numString) => Number(numString));
+  }
 }
 
 export default NumberExtractor;

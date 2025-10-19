@@ -4,7 +4,7 @@ class DelimiterFinder {
   constructor() {}
 
   getDelimiter(customDelimiterString) {
-    const customDelimiter = customDelimiterString.match(this.#delimiterSearchRegex);
+    const customDelimiter = customDelimiterString.match(this.#delimiterSearchRegex) || [];
 
     return customDelimiter.pop();
   }

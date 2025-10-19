@@ -1,3 +1,5 @@
+import DelimiterFinder from "../src/DelimiterFinder";
+
 describe("DelimiterFinder test", () => {
   const delimiterFinder = new DelimiterFinder();
 

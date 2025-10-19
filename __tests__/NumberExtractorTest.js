@@ -1,3 +1,5 @@
+import NumberExtractor from "../src/NumberExtractor";
+
 describe("NumberExtractor test", () => {
   const numberExtractor = new NumberExtractor();
 

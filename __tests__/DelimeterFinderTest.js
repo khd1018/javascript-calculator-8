@@ -4,10 +4,10 @@ describe("DelimiterFinder test", () => {
   const delimiterFinder = new DelimiterFinder();
 
   test.each([
-    ["//;\n", ";"],
-    ["//-\n", "-"],
-    ["// \n", " "],
-  ])("커스텀 구분자를 구할 수 있다.", (numbers, delimeter) => {
-    expect(delimiterFinder.getDelimiter(numbers)).toStrictEqual(delimeter);
+    ["//;\\n1,2:3", ";"],
+    ["//-\\n1,2:3", "-"],
+    ["//.\\n1,2:3", "."],
+  ])("커스텀 구분자를 구할 수 있다.", (string, delimiter) => {
+    expect(delimiterFinder.getDelimiter(string)).toStrictEqual(delimiter);
   });
 });

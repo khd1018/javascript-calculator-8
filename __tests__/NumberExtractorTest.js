@@ -9,6 +9,11 @@ describe("NumberExtractor test", () => {
     [null, "1:2:34", [1, 2, 34]],
     [undefined, `1:2:34`, [1, 2, 34]],
     ["-", "2:4:6", [2, 4, 6]],
+    ["", "123", [123]],
+    ["", "1_2_3", [NaN]],
+    ["", "a:b", [NaN, NaN]],
+    ["", "1:-2,3", [1, -2, 3]],
+    ["-", "1:-2,3", [1, 0, 2, 3]],
   ])("문자열에서 숫자들을 분리할 수 있다.", (customDelimiter, strings, numbers) => {
     const numberExtractor = new NumberExtractor(customDelimiter);
 

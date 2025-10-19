@@ -1,6 +1,10 @@
 class NumberExtractor {
   #delimiters = [":", ","];
 
+  has(customDelimiter) {
+    return this.#delimiters.includes(customDelimiter);
+  }
+
   add(customDelimiter) {
     this.#delimiters.push(customDelimiter);
   }

@@ -17,15 +17,6 @@ class InputValidator {
     return;
   }
 
-  checkCustomDelimiter(userInputString) {
-    const CUSTOM_DELIMITER_PATTERN = /^\/\/(\S+)\n/;
-    if (!CUSTOM_DELIMITER_PATTERN.test(userInputString)) {
-      throw new Error("[ERROR] 잘못된 커스텀 구분자 형식입니다. (예: //;\\n1;2;3)");
-    }
-
-    return;
-  }
-
   checkPrefix(userInputString) {
     const NUMBER_PREFIX_PATTERN = /^[1-9]/;
 

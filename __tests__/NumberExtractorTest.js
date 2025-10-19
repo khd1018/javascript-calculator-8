@@ -13,10 +13,10 @@ describe("NumberExtractor test", () => {
     ["", "1_2_3", [NaN]],
     ["", "a:b", [NaN, NaN]],
     ["", "1:-2,3", [1, -2, 3]],
-    ["-", "1:-2,3", [1, 0, 2, 3]],
+    ["-", "//-\\n1:-2,3", [1, 0, 2, 3]],
   ])("문자열에서 숫자들을 분리할 수 있다.", (customDelimiter, strings, numbers) => {
     const numberExtractor = new NumberExtractor(customDelimiter);
-
+    numberExtractor.add(customDelimiter);
     expect(numberExtractor.extract(strings)).toStrictEqual(numbers);
   });
 });

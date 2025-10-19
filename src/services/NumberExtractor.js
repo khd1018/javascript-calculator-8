@@ -11,8 +11,9 @@ class NumberExtractor {
 
   extract(userInputString) {
     const numberExtractionRegex = new RegExp(`[${this.#delimiters.join("")}]`);
+    const userInput = userInputString.replace(/^\/\/.+\\n/, "");
 
-    return userInputString.split(numberExtractionRegex).map((numString) => Number(numString));
+    return userInput.split(numberExtractionRegex).map((numString) => Number(numString));
   }
 }
 

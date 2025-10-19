@@ -1,3 +1,5 @@
+import Calculator from "../src/Calculator";
+
 describe("Calculator test", () => {
   const calculator = new Calculator();
 

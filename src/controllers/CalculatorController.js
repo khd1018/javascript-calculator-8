@@ -16,6 +16,10 @@ class CalculatorController {
       return this.calculator.sum(numbers);
     }
 
+    if (userInputString.includes("*")) {
+      throw new Error("[ERROR]잘못된 값 입력");
+    }
+
     const customDelimiter = this.delimiterFinder.getDelimiter(userInputString);
 
     if (customDelimiter && !this.numberExtractor.has(customDelimiter)) {

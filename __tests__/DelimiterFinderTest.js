@@ -1,4 +1,4 @@
-import DelimiterFinder from "../src/DelimiterFinder";
+import DelimiterFinder from "../src/services/DelimiterFinder";
 
 describe("DelimiterFinder test", () => {
   const delimiterFinder = new DelimiterFinder();

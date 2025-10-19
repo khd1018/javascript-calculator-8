@@ -1,4 +1,4 @@
-import Calculator from "../src/Calculator";
+import Calculator from "../src/services/Calculator";
 
 describe("Calculator test", () => {
   const calculator = new Calculator();

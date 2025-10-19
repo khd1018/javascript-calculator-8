@@ -18,8 +18,7 @@ class InputValidator {
   }
 
   checkCustomDelimiter(userInputString) {
-    const CUSTOM_DELIMITER_PATTERN = /^\/\/(.+)\n/;
-
+    const CUSTOM_DELIMITER_PATTERN = /^\/\/(\S+)\n/;
     if (!CUSTOM_DELIMITER_PATTERN.test(userInputString)) {
       throw new Error("[ERROR] 잘못된 커스텀 구분자 형식입니다. (예: //;\\n1;2;3)");
     }

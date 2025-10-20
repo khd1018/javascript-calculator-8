@@ -1,10 +1,10 @@
-import InputView from "./views/InputView.js";
-import OutputView from "./views/outputView.js";
-import Calculator from "./services/Calculator.js";
-import DelimiterFinder from "./services/DelimiterFinder.js";
-import NumberExtractor from "./services/NumberExtractor.js";
-import InputValidator from "./services/InputValidator.js";
-import CalculatorController from "./controllers/CalculatorController.js";
+import InputView from "./InputView.js";
+import OutputView from "./outputView.js";
+import Calculator from "./Calculator.js";
+import DelimiterFinder from "./DelimiterFinder.js";
+import NumberExtractor from "./NumberExtractor.js";
+import InputValidator from "./InputValidator.js";
+import CalculatorController from "./CalculatorController.js";
 
 class App {
   async run() {

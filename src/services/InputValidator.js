@@ -24,16 +24,6 @@ class InputValidator {
 
     return;
   }
-
-  checkPrefix(userInputString) {
-    const NUMBER_PREFIX_PATTERN = /^[1-9]/;
-
-    if (!userInputString.startsWith("//") && !NUMBER_PREFIX_PATTERN.test(userInputString)) {
-      throw new Error("[ERROR] 입력 형식이 잘못되었습니다. 숫자 또는 // 로 시작해야 합니다.");
-    }
-
-    return;
-  }
 }
 
 export default InputValidator;

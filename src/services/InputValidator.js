@@ -9,7 +9,7 @@ class InputValidator {
 
   checkPositive(numbers) {
     numbers.forEach((number) => {
-      if (number <= 0 || Number.isNaN(number)) {
+      if (number <= 0 || Number.isNaN(Number(number))) {
         throw new Error("[ERROR]잘못된 값을 입력하셨습니다. 양수와 구분자를 정확히 입력해주세요.");
       }
     });
@@ -18,7 +18,7 @@ class InputValidator {
   }
 
   checkFormat(customDelimiterString) {
-    if (!customDelimiterString.startsWith("//") || !customDelimiterString.endsWith("\n")) {
+    if (!customDelimiterString.startsWith("//") || !customDelimiterString.endsWith("\\n")) {
       throw new Error("[ERROR] 잘못된 커스텀 구분자 입력 형식입니다.");
     }
 

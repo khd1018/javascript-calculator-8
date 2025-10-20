@@ -17,7 +17,7 @@ class App {
     const calculatorController = new CalculatorController(calculator, delimiterFinder, numberExtractor, inputValidator);
 
     const userInputString = await inputView.getUserInput();
-    outputView.printResult(calculatorController.calculateSum(userInputString));
+    outputView.printResult(calculatorController.getResult(userInputString));
   }
 }
 

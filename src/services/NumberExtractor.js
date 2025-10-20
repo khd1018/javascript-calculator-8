@@ -9,11 +9,10 @@ class NumberExtractor {
     this.#delimiters.push(customDelimiter);
   }
 
-  extract(userInputString) {
+  extract(numberString) {
     const numberExtractionRegex = new RegExp(`[${this.#delimiters.join("")}]`);
-    const userInput = userInputString.replace(/^\/\/.+\\n/, "");
 
-    return userInput.split(numberExtractionRegex).map((numString) => Number(numString));
+    return numberString.split(numberExtractionRegex).map((numString) => Number(numString));
   }
 }
 

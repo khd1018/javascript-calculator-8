@@ -6,20 +6,55 @@ class CalculatorController {
     this.inputValidator = inputValidator;
   }
 
-  getResult(userInputString) {}
+  getResult(userInputString) {
+    this.#validate(userInputString);
+
+    if (this.#isFirstNotDigit(userInputString)) {
+      const { numberString, customDelimiterString } = { ...this.#divide(userInputString) };
+
+      this.#register(this.#getCustomDelimiter(customDelimiterString));
+      return this.#calculateSum(numberString);
+    }
+
+    return this.#calculateSum(userInputString);
+  }
+
+  #divide(userInputString) {
+    const newlineIndex = userInputString.indexOf("n");
+
+    const customDelimiterString = userInputString.substring(0, newlineIndex + 1);
+    const numberString = userInputString.substring(newlineIndex + 1);
+
+    return { numberString, customDelimiterString };
+  }
 
   #validate(userInputString) {
     this.inputValidator.checkEmpty(userInputString);
-    this.inputValidator.checkPrefix(userInputString);
   }
 
-  #isFirstCharDigit(userInputString) {
-    return !Number.isNaN(userInputString);
+  #isFirstNotDigit(userInputString) {
+    return Number.isNaN(Number(userInputString[0]));
   }
 
-  #register(customDelimiter) {}
+  #getCustomDelimiter(customDelimiterString) {
+    this.inputValidator.checkFormat(customDelimiterString);
+    const customDelimiter = this.delimiterFinder.getDelimiter(customDelimiterString);
+    this.inputValidator.checkEmpty(customDelimiter);
 
-  #calculateSum() {}
+    return customDelimiter;
+  }
+
+  #register(customDelimiter) {
+    if (!this.numberExtractor.has(customDelimiter)) {
+      this.numberExtractor.add(customDelimiter);
+    }
+  }
+
+  #calculateSum(numberString) {
+    const numbers = [...this.numberExtractor.extract(numberString)];
+    this.inputValidator.checkPositive(numbers);
+    return this.calculator.sum(numbers);
+  }
 }
 
 export default CalculatorController;

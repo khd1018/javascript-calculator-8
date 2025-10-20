@@ -6,18 +6,20 @@ class CalculatorController {
     this.inputValidator = inputValidator;
   }
 
-  calculateSum(userInputString) {
-    this.#validate(userInputString);
-  }
+  getResult(userInputString) {}
 
   #validate(userInputString) {
     this.inputValidator.checkEmpty(userInputString);
     this.inputValidator.checkPrefix(userInputString);
   }
 
-  #isFirstCharDigit() {}
+  #isFirstCharDigit(userInputString) {
+    return !Number.isNaN(userInputString);
+  }
 
   #register(customDelimiter) {}
+
+  #calculateSum() {}
 }
 
 export default CalculatorController;

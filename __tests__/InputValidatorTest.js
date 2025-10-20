@@ -1,4 +1,4 @@
-import InputValidator from "../src/services/InputValidator";
+import InputValidator from "../src/InputValidator.js";
 
 describe("InputValidator test", () => {
   const inputValidator = new InputValidator();

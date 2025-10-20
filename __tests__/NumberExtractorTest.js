@@ -1,4 +1,4 @@
-import NumberExtractor from "../src/services/NumberExtractor";
+import NumberExtractor from "../src/NumberExtractor.js";
 
 describe("NumberExtractor test", () => {
   test.each([

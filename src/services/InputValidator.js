@@ -17,6 +17,14 @@ class InputValidator {
     return;
   }
 
+  checkFormat(customDelimiterString) {
+    if (!customDelimiterString.startsWith("//") || !customDelimiterString.endsWith("\n")) {
+      throw new Error("[ERROR] 잘못된 커스텀 구분자 입력 형식입니다.");
+    }
+
+    return;
+  }
+
   checkPrefix(userInputString) {
     const NUMBER_PREFIX_PATTERN = /^[1-9]/;
 

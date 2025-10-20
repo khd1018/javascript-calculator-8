@@ -41,7 +41,7 @@ class CalculatorController {
     const customDelimiter = this.delimiterFinder.getDelimiter(customDelimiterString);
     this.inputValidator.checkEmpty(customDelimiter);
 
-    return customDelimiter;
+    return customDelimiter.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   }
 
   #register(customDelimiter) {

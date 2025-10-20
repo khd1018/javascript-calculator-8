@@ -7,29 +7,17 @@ class CalculatorController {
   }
 
   calculateSum(userInputString) {
+    this.#validate(userInputString);
+  }
+
+  #validate(userInputString) {
     this.inputValidator.checkEmpty(userInputString);
     this.inputValidator.checkPrefix(userInputString);
-
-    if (!this.delimiterFinder.hasCustomDelimiter(userInputString)) {
-      const numbers = this.numberExtractor.extract(userInputString);
-      this.inputValidator.checkPositive(numbers);
-      return this.calculator.sum(numbers);
-    }
-
-    if (userInputString.includes("*")) {
-      throw new Error("[ERROR]잘못된 값 입력");
-    }
-
-    const customDelimiter = this.delimiterFinder.getDelimiter(userInputString);
-
-    if (customDelimiter && !this.numberExtractor.has(customDelimiter)) {
-      this.numberExtractor.add(customDelimiter);
-    }
-
-    const numbers = this.numberExtractor.extract(userInputString);
-    this.inputValidator.checkPositive(numbers);
-    return this.calculator.sum(numbers);
   }
+
+  #isFirstCharDigit() {}
+
+  #register(customDelimiter) {}
 }
 
 export default CalculatorController;

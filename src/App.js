@@ -1,5 +1,5 @@
 import InputView from "./InputView.js";
-import OutputView from "./outputView.js";
+import OutputView from "./OutputView.js";
 import Calculator from "./Calculator.js";
 import DelimiterFinder from "./DelimiterFinder.js";
 import NumberExtractor from "./NumberExtractor.js";
